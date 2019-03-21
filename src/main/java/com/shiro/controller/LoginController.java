@@ -37,7 +37,7 @@ import com.shiro.vo.ResultMap;
 @RestController
 public class LoginController {
 	
-	private ResultMap resultMap=new ResultMap();
+	private final ResultMap resultMap=new ResultMap();
     
     @Autowired
     private UserService service;
@@ -76,7 +76,7 @@ public class LoginController {
      * @param username 用户名
      * @param password 密码
      */
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ResultMap login(String username, String password) {
         // 从SecurityUtils里边创建一个 subject
         Subject subject = SecurityUtils.getSubject();
